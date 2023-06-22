@@ -1,0 +1,16 @@
+export const headerContent = ["Payment Status", "About", "Help", "Language"]
+export const headerPaymentLinks = ["https://www.paysimply.ca/PaymentStatus", "https://www.paysimply.ca/About", "https://help.paymentsource.net/paysimply/en/categories", "/"]
+export const formHeader = ["Taxpayer Details", "All fields are mandatory."]
+export const ProgressBarText = ["Tax Type", "Details", "Payment Options", "Review", "Make Payment", "Confirmation"]
+export const formText = ["Email Address", "Social Insurance Number", "Taxpayer Name", "Payment Amount"]
+export const formAuxilliaryText = ["Where should we send your receipt", "999 999 999", "   ", "   "]
+export const formPlaceHolderText = ["Email Address", "999 999 999", "Full Name", "Payment Amount"]
+export const formFooterText = ["Your information will be encrypted and not be shared with anyone except the Canada Revenue Agency.", "By clicking the Continue Button,", "you agree to Payment source's Terms."]
+export const formNavigationButtonsText = ["Back", "Continue"]
+export const formInputTypes = [""]
+
+
+export const linksCardText1 = ["Payment Recipient", "Canada Revenue Agency"]
+export const linksCardText2 = ["Individual Taxes", "Individual(T1)", "Individual (T1) Tax amount owing"]
+export const linksCardText3 = ["This is a secure site"]
+export const linksCardText4 = ["Protect yourself againt fraud.", "Visit the CRA site for more information."]

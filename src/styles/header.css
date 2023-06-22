@@ -1,0 +1,108 @@
+.navigation {
+    position: relative;
+    display: flex;
+    display: -ms-flexbox;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0.5rem 1rem !important;
+    background-color: #d52b1e !important;
+    position: fixed;
+  
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+  }
+  
+
+
+  .brand-name {
+    color: rgb(255, 255, 255);
+    padding: 0 !important;
+    margin-right: 8px !important;
+  }
+
+  .brand-logo {
+    width: 100px;
+    border-width: 0px;
+  }
+  
+  .navigation-menu {
+    margin-left: auto;
+  }
+  
+  .navigation-menu ul {
+    display: flex;
+    padding: 0;
+  }
+  
+  .navigation-menu li {
+    list-style-type: none;
+    margin: 0 1rem;
+  }
+
+  .navigation-menu li a {
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+  }
+  
+  .navigation-menu li a.dropdown-item{
+    color:#212529;
+  }
+  .dropdown-item.active {
+    background-color: #d52b1e !important;
+    color: #fff !important;
+  }
+ 
+  .NavbarSearchContainer {
+    display: inline-flex;
+    overflow: hidden;
+    min-width: 250px;
+  }
+
+  .NavbarSearchBtn {
+    padding: 0.5rem;
+    margin-left: -30px;
+  }
+
+  @media screen and (max-width: 550px) {
+    .hamburger {
+      display: block;
+    }
+  
+    .navigation-menu ul {
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 60px);
+      background-color: white;
+      border-top: 1px solid black;
+      display: none;
+    }
+  
+    .navigation-menu li {
+      text-align: center;
+      margin: 0;
+    }
+  
+    .navigation-menu li a {
+      color: black;
+      width: 100%;
+      padding: 1.5rem 0;
+    }
+  
+    .navigation-menu li:hover {
+      background-color: #eee;
+    }
+  
+    .navigation-menu.expanded ul {
+      display: block;
+    }
+  }
+  

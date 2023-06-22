@@ -1,0 +1,20 @@
+.link-card-footer {
+    background-color: #fcfcfc !important;
+    color: #212529 !important;
+    font-size: 1rem;
+    font-weight: 570;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-footer {
+    color: #005600 !important;
+    opacity: .75;
+    background-color: #fcfcfc !important
+}
+
+span.card-title, span.card-text {
+    color: #212529 !important;
+    font-size: 1.3rem;
+    font-weight: 570;
+}

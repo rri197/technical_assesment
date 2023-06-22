@@ -12,8 +12,8 @@ function Header() {
     setIsLanguagePopupOpen(!isLanguagePopupOpen);
     localStorage.getItem('lang') === "en"? localStorage.setItem("lang", "fr"): localStorage.setItem("lang", "en");
     window.location.reload();
-
   };
+  
   return (
     <>
     <nav className="navigation navbar navbar-expand-lg navbar-dark fixed-top d-flex ">
@@ -37,7 +37,7 @@ function Header() {
           <div role="button">
             <li className="NavbarSearchContainer" style={{alignSelf: "center"}}>
               <input type="text" style={{borderTopRightRadius: "initial", borderBottomRightRadius: "initial"}} className="form-control NavbarSearchInput" placeholder={searchPlaceHolder} ></input>
-              <button type="submit" className="search-button NavbarSearchBtn" style={{backgroundColor: "white", border: "none", borderRadius: "var(--bs-border-radius)", borderTopLeftRadius: "initial", borderBottomLeftRadius: "initial", marginLeft: "-1px"}}  >
+              <button type="submit" onClick={()=>window.open("https://www.paysimply.ca/Partner/Default.aspx/search/q/")} className="search-button NavbarSearchBtn" style={{backgroundColor: "white", border: "none", borderRadius: "var(--bs-border-radius)", borderTopLeftRadius: "initial", borderBottomLeftRadius: "initial", marginLeft: "-1px"}}  >
                 <img src="./search.webp" alt="search" style={{height: "10px"}} />
              </button>
             </li>

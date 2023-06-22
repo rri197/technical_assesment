@@ -8,6 +8,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import 'parsleyjs/dist/parsley.min.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+//eslint-disable-next-line
 const language = localStorage.getItem('lang') ? null: localStorage.setItem('lang', "en");
 root.render(
   <React.StrictMode>

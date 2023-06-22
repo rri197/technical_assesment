@@ -7,8 +7,11 @@ function InputCard() {
   const [inValidSIN, setInValidSIN] = useState("");
   const [inValidName, setInValidName] = useState("");
   const [inValidAmount, setInValidAmount] = useState("");
+  //eslint-disable-next-line
   const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  //eslint-disable-next-line
   const SINformat = /^[0-9]{9}$/;
+  //eslint-disable-next-line
   const nameformat = /^[a-z]{1,100}$/;
 
 

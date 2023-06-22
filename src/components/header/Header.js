@@ -1,9 +1,19 @@
 import { useState } from "react";
 import "../../styles/header.css";
-import {headerContent, headerPaymentLinks} from "../../utils/data/data";
+import {searchPlaceHolder, headerContent, headerPaymentLinks} from "../../utils/data/data";
 
 function Header() {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
+  const [isLanguagePopupOpen, setIsLanguagePopupOpen] = useState(false);
+  const closeLanguagePopup = evt => {
+    setIsLanguagePopupOpen(!isLanguagePopupOpen);
+  };
+  const changeLanguage = evt => {
+    setIsLanguagePopupOpen(!isLanguagePopupOpen);
+    localStorage.getItem('lang') === "en"? localStorage.setItem("lang", "fr"): localStorage.setItem("lang", "en");
+    window.location.reload();
+
+  };
   return (
     <>
     <nav className="navigation navbar navbar-expand-lg navbar-dark fixed-top d-flex ">
@@ -26,22 +36,25 @@ function Header() {
         <ul className="navbar-nav justify-content-end ml-auto" style={{flex: "auto"}}>
           <div role="button">
             <li className="NavbarSearchContainer" style={{alignSelf: "center"}}>
-              <input type="text" style={{borderTopRightRadius: "initial", borderBottomRightRadius: "initial"}} className="form-control NavbarSearchInput" placeholder="Search for a bill..."></input>
+              <input type="text" style={{borderTopRightRadius: "initial", borderBottomRightRadius: "initial"}} className="form-control NavbarSearchInput" placeholder={searchPlaceHolder} ></input>
               <button type="submit" className="search-button NavbarSearchBtn" style={{backgroundColor: "white", border: "none", borderRadius: "var(--bs-border-radius)", borderTopLeftRadius: "initial", borderBottomLeftRadius: "initial", marginLeft: "-1px"}}  >
                 <img src="./search.webp" alt="search" style={{height: "10px"}} />
              </button>
             </li>
           </div>
           {headerContent.map((content, index) => (
-              <li key={index} className={content==="Language" ? "nav-item dropdown" : "nav-item"} style={{alignSelf: "center", color: "white"}}>
-              <button key={index} type="button" onClick={() => window.open(headerPaymentLinks[index])}
-              className={content==="Language" ? "nav-link dropdown-toggle" : "nav-link"} data-toggle="dropdown" style={{color: "white"}}>{content}</button>
-              {content==="Language" ? (<div className="dropdown-menu">
-                  <a href="/" className="dropdown-item active" lang="en">
+              <li key={index} className={content==="Language" || content==="Langue" ? "nav-item dropdown" : "nav-item"} style={{alignSelf: "center", color: "white"}}>
+              <button key={index} type="button" onClick={() => content!=="Language" && content!=="Langue" ? window.open(headerPaymentLinks[index]): closeLanguagePopup()}
+              className={content==="Language" || content==="Langue" ? "nav-link dropdown-toggle" : "nav-link"} 
+              data-toggle="dropdown" style={{color: "white"}}>
+                {content}
+                </button>
+              {content==="Language" || content==="Langue" ? (<div className={isLanguagePopupOpen? "dropdown-menu show" : "dropdown-menu"}>
+                  <button onClick={() => localStorage.getItem('lang') === "en"? null: changeLanguage()} className={localStorage.getItem('lang') === "en"? "dropdown-item active": "dropdown-item"} lang="en">
                   English
-                </a>
-                  <a href="/" className="dropdown-item" lang="fr" > Français
-                </a>
+                </button>
+                  <button onClick={() => localStorage.getItem('lang') === "fr"? null: changeLanguage()} className={localStorage.getItem('lang') === "fr"? "dropdown-item active": "dropdown-item"} lang="fr"> Français
+                </button>
               </div> ): null }
                    
             </li>
@@ -55,4 +68,4 @@ function Header() {
   )
 }
 
-export default Header
+export default Header;

@@ -11,6 +11,7 @@ function InputCard() {
   const SINformat = /^[0-9]{9}$/;
   const nameformat = /^[a-z]{1,100}$/;
 
+
   const emailValidation = evt => {
     if (evt.target.value.match(mailformat))
     {
@@ -158,7 +159,7 @@ function InputCard() {
             {formAuxilliaryText[3]}
             </span>
             <div className="input-group">
-              <div className="input-group-prepend col-md-1"><span className="input-group-text">$</span></div>
+              <div className="input-group-prepend col-md-1"><span className="input-group-text" style={{flexFlow: "column"}}>$</span></div>
             <input className={Boolean(inValidAmount) ? "invalid-input-border col-md-11" : "col-md-11" } placeholder={formPlaceHolderText[3]}
             onBlur={amountValidation} onChange={amountChange}>
             </input>

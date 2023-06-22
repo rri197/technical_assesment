@@ -1,27 +1,9 @@
 .navigation {
-    position: relative;
-    display: flex;
-    display: -ms-flexbox;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
     padding: 0.5rem 1rem !important;
     background-color: #d52b1e !important;
-    position: fixed;
-  
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1030;
   }
   
-
-
   .brand-name {
-    color: rgb(255, 255, 255);
     padding: 0 !important;
     margin-right: 8px !important;
   }
@@ -70,10 +52,6 @@
   }
 
   @media screen and (max-width: 550px) {
-    .hamburger {
-      display: block;
-    }
-  
     .navigation-menu ul {
       flex-direction: column;
       position: absolute;

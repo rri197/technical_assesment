@@ -31,17 +31,20 @@ function Header() {
         <img src="https://www.paysimply.ca/images/logos/PaySimply-Lg.png" alt="PaySimply" className="brand-logo"/>
       </a>
 
-      <div className={
-          isNavExpanded ? "navigation-menu" : "navigation-menu collapse navbar-collapse"} id="navbarSupportedContent">  
+      <div className={ isNavExpanded ? "navigation-menu" : "navigation-menu collapse navbar-collapse"} id="navbarSupportedContent">
+
         <ul className="navbar-nav justify-content-end ml-auto" style={{flex: "auto"}}>
+          
           <div role="button">
             <li className="NavbarSearchContainer" style={{alignSelf: "center"}}>
               <input type="text" style={{borderTopRightRadius: "initial", borderBottomRightRadius: "initial"}} className="form-control NavbarSearchInput" placeholder={searchPlaceHolder} ></input>
-              <button type="submit" onClick={()=>window.open("https://www.paysimply.ca/Partner/Default.aspx/search/q/")} className="search-button NavbarSearchBtn" style={{backgroundColor: "white", border: "none", borderRadius: "var(--bs-border-radius)", borderTopLeftRadius: "initial", borderBottomLeftRadius: "initial", marginLeft: "-1px"}}  >
+              <button type="submit" onClick={()=>window.open("https://www.paysimply.ca/Partner/Default.aspx/search/q/")} className="search-button NavbarSearchBtn" 
+              style={{backgroundColor: "white", border: "none", borderRadius: "var(--bs-border-radius)", borderTopLeftRadius: "initial", borderBottomLeftRadius: "initial", marginLeft: "-1px"}}  >
                 <img src="./search.webp" alt="search" style={{height: "10px"}} />
              </button>
             </li>
           </div>
+          
           {headerContent.map((content, index) => (
               <li key={index} className={content==="Language" || content==="Langue" ? "nav-item dropdown" : "nav-item"} style={{alignSelf: "center", color: "white"}}>
               <button key={index} type="button" onClick={() => content!=="Language" && content!=="Langue" ? window.open(headerPaymentLinks[index]): closeLanguagePopup()}
@@ -55,8 +58,7 @@ function Header() {
                 </button>
                   <button onClick={() => localStorage.getItem('lang') === "fr"? null: changeLanguage()} className={localStorage.getItem('lang') === "fr"? "dropdown-item active": "dropdown-item"} lang="fr"> Français
                 </button>
-              </div> ): null }
-                   
+              </div> ): null }     
             </li>
             ))
           }

@@ -18,7 +18,6 @@ function InputCard() {
   const emailValidation = evt => {
     if (evt.target.value.match(mailformat))
     {
-      // Validated
       setInValidEmail("");
     } else {
       setInValidEmail("Invalid email address.");
@@ -27,14 +26,12 @@ function InputCard() {
   const emailChange = evt => {
     if (evt.target.value.match(mailformat))
     {
-      // Validated
       setInValidEmail("");
     }
   };
   const sinValidation = evt => {
     if (evt.target.value.match(SINformat))
     {
-      // Validated
       setInValidSIN("");
     } else {
       setInValidSIN("Invalid SIN.");
@@ -43,7 +40,6 @@ function InputCard() {
   const sinChange = evt => {
     if (evt.target.value.match(SINformat))
     {
-      // Validated
       setInValidSIN("");
     }
   };
@@ -51,7 +47,6 @@ function InputCard() {
   const nameValidation = evt => {
     if (evt.target.value.match(nameformat))
     {
-      // Validated
       setInValidName("");
     } else {
       setInValidName("Invalid Name");
@@ -60,7 +55,6 @@ function InputCard() {
   const nameChange = evt => {
     if (evt.target.value.match(nameformat))
     {
-      // Validated
       setInValidName("");
     }
   };
@@ -68,7 +62,6 @@ function InputCard() {
   const amountValidation = evt => {
     if (evt.target.value >= 1 && evt.target.value <= 50000)
     {
-      // Validated
       setInValidAmount("");
     } else {
       setInValidAmount("Must be $1 - $50,000.");
@@ -77,7 +70,6 @@ function InputCard() {
   const amountChange = evt => {
     if (evt.target.value >= 1 && evt.target.value <= 50000)
     {
-      // Validated
       setInValidAmount("");
     }
   };
@@ -100,23 +92,7 @@ function InputCard() {
          <div className="details row text-left mt-3">
           <div className="col-md-2"></div>
           <div className="col-md-8">
-          
-          {/* {formText.map((context, index) => (
-            <div className="details_form"> 
-            <label className="form-label-text">
-              {context}
-            </label>
-            <span className="auxilliary-text">
-            {formAuxilliaryText[index]}
-            </span>
-            {index === 3 ? ( <div className="input-group">
-              <div className="input-group-prepend col-md-1"><span className="input-group-text">$</span></div>
-            <input className="col-md-11" placeholder={formPlaceHolderText[index]}
-           required maxLength={60}>
-            </input>
-            </div>) : (<input placeholder={formPlaceHolderText[index]}></input>)}
-          </div>
-          ))} */}
+  
 
           <form>
           <div className="details_form"> 
@@ -126,7 +102,9 @@ function InputCard() {
             <span className="auxilliary-text">
             {formAuxilliaryText[0]}
             </span>  
-           <input className={Boolean(inValidEmail) ? "invalid-input-border" : "" } placeholder={formPlaceHolderText[0]} onBlur={emailValidation} onChange={emailChange} aria-invalid="true"></input>
+           <input className={Boolean(inValidEmail) ? "invalid-input-border" : "" } placeholder={formPlaceHolderText[0]} 
+           onBlur={emailValidation} onChange={emailChange} aria-invalid="true">
+           </input>
              <span className="invalid-input">{inValidEmail}</span>
           </div>
 
@@ -183,13 +161,10 @@ function InputCard() {
            className="terms-link">{formFooterText[2]}</a>
           </span>
          </div>
-
          </div>
-
-        
          </div>
-
         </div>
+
         <div className="form_navigation_buttons row mt-3 halfBtnRow">
           {formNavigationButtonsText.map((content, index) => (<div className="col-6 halfBtn" key={index}>
             <button className="nav_button btn btn-primary btn-block btn-lg" onClick={() => window.open("https://paysimply.ca")}> {content} </button>

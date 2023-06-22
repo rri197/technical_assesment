@@ -28,13 +28,16 @@
 
 .form-label-text {
     color: #212529;
-    font-family: 12px Metropolis, sans-serif;
+    /* font-family: 12px Metropolis, sans-serif; */
+    font-size: 1.1rem;
+    font-weight: 450;
+    line-height: 1.5;
 }
 
 .auxilliary-text {
     display: block;
     color: #6c757d!important;
-    font-size: .8rem;
+    font-size: .9rem;
     min-height: 0.5rem;
 }
 

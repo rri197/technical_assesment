@@ -6,7 +6,7 @@ function links_card() {
       <>
       <div className="col-md-4">
         <div className="card text-center">
-          <div className="card-header" style={{display: "flex", flexDirection: "column"}}>
+          <div className="card-header" style={{display: "flex", flexDirection: "column", backgroundColor: "white"}}>
             <span className="card-title mb-1"> {linksCardText1[0]} </span>
             <span className="card-text mb-1"> {linksCardText1[1]} </span>
             <a href="https://www.canada.ca" target="_blank" rel="noreferrer">https://www.canada.ca</a>
@@ -16,7 +16,7 @@ function links_card() {
             <span className="card-text mb-1"> {linksCardText2[1]} </span>
             <span className="card-text mb-0"> {linksCardText2[2]} </span>
           </div>
-          <div className="card-footer">
+          <div className="card-footer" style={{padding: "0.77rem 1.25rem"}}>
           <svg className="svg-inline--fa fa-lock fa-w-14" aria-hidden="true" focusable="false" data-prefix="fas" 
           data-icon="lock" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="" style={{width: "0.8rem"}}>
             <path fill="currentColor" d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z">
